@@ -11,21 +11,6 @@ class App extends Component {
     ]
   }
 
-  switchNameHandler = () => {
-    console.log("teste");
-  }
-
-  nameChangeHandler = (event) => {
-    this.setState({
-      persons: [
-        {name: "Nei", age: "32"},
-        {name: event.target.value, age: "28"},
-        {name: "Carla", age: "17"}
-        ],
-      showPeople: false
-    })
-  }
-
   tooglePeopleHandler = () => {
     const doesShow = this.state.showPeople;
     this.setState({showPeople: !doesShow});
