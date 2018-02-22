@@ -6,3 +6,14 @@
   padding: 16px;
   text-align: center;
 }
+
+.PersonClose {
+  font-style: normal;
+  border: 1px solid black;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: -2px;
+  float: right;
+  cursor: pointer;
+}
