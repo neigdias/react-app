@@ -41,7 +41,8 @@ class App extends Component {
 
   render() {
     const style = {
-      backgroudColor: 'white',
+      backgroundColor: 'green',
+      color:"white",
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -49,6 +50,15 @@ class App extends Component {
     }
 
     let people = null;
+
+    const classes = [];
+
+    if (this.state.persons.length <= 2){
+      classes.push('red');
+    }
+    if (this.state.persons.length <= 1){
+      classes.push('bold');
+    }
 
     if (this.state.showPeople){
       people = (
@@ -61,12 +71,14 @@ class App extends Component {
                            changed={(event) => this.nameChangedHandler(event, person.id)}/>
           })}
         </div>
-      )
+      );
+      style.backgroundColor = 'red';
     }
 
     return (
       <div className="App">
         <h1>Hi, I'm a react app :)</h1>
+        <p className={classes.join(' ')}>This is really working.</p>
         <button style={style} onClick={this.tooglePeopleHandler}>Toogle people</button>
         {people}
       </div>
